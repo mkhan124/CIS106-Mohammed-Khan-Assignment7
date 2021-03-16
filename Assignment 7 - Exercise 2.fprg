@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-16 09:13:11 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVRDRVFHTEc7MjAyMS0wMy0xNjswODo0MzowNSBQTTszMzcz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVRDRVFHTEc7MjAyMS0wMy0xNjswOToxMzoxMSBQTTsxOzM0NzY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="score1" type="Real" array="False" size=""/>
+            <declare name="score2" type="Real" array="False" size=""/>
+            <declare name="score3" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter last name&quot;" newline="True"/>
+            <input variable="lastname"/>
+            <output expression="&quot;Enter exam score 1&quot;" newline="True"/>
+            <input variable="score1"/>
+            <output expression="&quot;Enter exam score 2&quot;" newline="True"/>
+            <input variable="score2"/>
+            <output expression="&quot;Enter exam score 3&quot;" newline="True"/>
+            <input variable="score3"/>
+            <declare name="averagescore" type="Real" array="False" size=""/>
+            <call expression="compaveragescore(score1, score2, score3)"/>
+            <assign variable="averagescore" expression="compaveragescore(score1, score2, score3)"/>
+            <declare name="totalpoints" type="Real" array="False" size=""/>
+            <assign variable="totalpoints" expression="score1+score2+score3"/>
+            <output expression="&quot;Average score: &quot; &amp; averagescore" newline="True"/>
+            <output expression="&quot;Total points: &quot; &amp; totalpoints" newline="True"/>
+        </body>
+    </function>
+    <function name="compaveragescore" type="Real" variable="averagescore">
+        <parameters>
+            <parameter name="score1" type="Real" array="False"/>
+            <parameter name="score2" type="Real" array="False"/>
+            <parameter name="score3" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="averagescore" type="Real" array="False" size=""/>
+            <assign variable="averagescore" expression="(score1+score2+score3) / 3"/>
+        </body>
+    </function>
+</flowgorithm>
