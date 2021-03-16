@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-16 09:46:24 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVRDRVFHTEc7MjAyMS0wMy0xNjswOTozMzowNSBQTTszMzcz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVRDRVFHTEc7MjAyMS0wMy0xNjswOTo0NjoyNCBQTTsxOzM0ODY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastname" type="String" array="False" size=""/>
+            <declare name="sales" type="Real" array="False" size=""/>
+            <input variable="lastname"/>
+            <input variable="sales"/>
+            <call expression="compcomission(sales)"/>
+            <declare name="comission" type="Real" array="False" size=""/>
+            <assign variable="comission" expression="compcomission(sales)"/>
+            <declare name="nextyearstarget" type="Real" array="False" size=""/>
+            <assign variable="nextyearstarget" expression="(5/100 * 100000)"/>
+            <output expression="&quot;Sales: &quot; &amp; sales &amp; &quot;, Comission: &quot; &amp; comission &amp; &quot;, Next years target: &quot; &amp; nextyearstarget" newline="True"/>
+        </body>
+    </function>
+    <function name="compcomission" type="Real" variable="comission">
+        <parameters>
+            <parameter name="sales" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="comission" type="Real" array="False" size=""/>
+            <if expression="sales &gt;= 100000">
+                <then>
+                    <assign variable="comission" expression="(10/100 * sales) + sales"/>
+                </then>
+                <else>
+                    <assign variable="comission" expression="(5/100 * sales) + sales"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
