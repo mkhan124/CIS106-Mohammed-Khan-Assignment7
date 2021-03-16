@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-03-16 09:31:15 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLThTNVQzSzc7MjAyMS0wMy0xNTswNDo1OToyOSBBTTszMzA0"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLThTNVQzSzc7MjAyMS0wMy0xNTswNjoyMToxMyBBTTsxOzMzOTY="/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVRDRVFHTEc7MjAyMS0wMy0xNjswOTozMToxNSBQTTsxOzM0ODA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qty" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="discountrate" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter quantity&quot;" newline="True"/>
+            <input variable="qty"/>
+            <output expression="&quot;Enter total price&quot;" newline="True"/>
+            <input variable="price"/>
+            <output expression="&quot;Enter discount rate&quot;" newline="True"/>
+            <input variable="discountrate"/>
+            <declare name="discountamount" type="Real" array="False" size=""/>
+            <call expression="discountamount(discountrate, price)"/>
+            <assign variable="discountamount" expression="discountamount(discountrate, price)"/>
+            <declare name="discountedprice" type="Real" array="False" size=""/>
+            <assign variable="discountedprice" expression="price - discountamount"/>
+            <output expression="&quot;Quantity: &quot; &amp; qty &amp; &quot;, Total price: &quot; &amp; price &amp;&#13;&#10;&quot;, Discount amount: &quot; &amp; discountamount &amp; &quot;, Discounted price: &quot; &amp; discountedprice" newline="True"/>
+        </body>
+    </function>
+    <function name="discountamount" type="Real" variable="discountamount">
+        <parameters>
+            <parameter name="discountrate" type="Real" array="False"/>
+            <parameter name="price" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="discountamount" type="Real" array="False" size=""/>
+            <assign variable="discountamount" expression="discountrate/100 * price"/>
+        </body>
+    </function>
+</flowgorithm>
